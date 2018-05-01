@@ -1,16 +1,16 @@
-package com.practice.data
+package com.practice.data.process
 
 /**
   * Created by sesadasivam on 12/9/17.
   */
-import org.apache.spark.SparkContext
-import org.apache.spark.SparkContext._
-import org.apache.spark.SparkConf
-import org.apache.spark.input.PortableDataStream
-import org.apache.tika.metadata._
-import org.apache.tika.parser._
-import org.apache.tika.sax.WriteOutContentHandler
 import java.io._
+
+import org.apache.spark.{SparkConf, SparkContext}
+import org.apache.spark.input.PortableDataStream
+import org.apache.tika.parser.AutoDetectParser
+import org.apache.tika.sax.WriteOutContentHandler
+import org.apache.tika.metadata.Metadata
+import org.apache.tika.parser.ParseContext
 
 object TikaFileParser {
 
@@ -35,7 +35,7 @@ object TikaFileParser {
   def main(args: Array[String]) {
 
     //val filesPath = "/home/user/documents/*"
-    val filesPath = "/Users/sesadasivam/Documents/Sendil/Personal/Notes/*"
+    val filesPath = "/Users/1395764/Work/input/Notes/*"
     val conf = new SparkConf().setAppName("TikaFileParser").setMaster("local[*]")
     val sc = new SparkContext(conf)
     val fileData = sc.binaryFiles(filesPath)

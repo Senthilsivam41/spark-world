@@ -4,7 +4,7 @@ version := "1.0"
 
 scalaVersion := "2.11.8"
 
-val localDep = RootProject(file("/Users/sesadasivam/Documents/Sendil/Work/Research/Projects/spark-world"))
+val localDep = RootProject(file("/Users/1395764/Work/git-repo/spark-world"))
 
 // https://mvnrepository.com/artifact/org.apache.spark/spark-core
 retrieveManaged := true
